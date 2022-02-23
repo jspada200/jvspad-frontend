@@ -1,0 +1,38 @@
+{
+  "name": "jvspad",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fec/remark-a11y-emoji": "^3.1.0",
+    "axios": "^0.26.0",
+    "bootstrap": "^5.1.3",
+    "extracted-loader": "^1.0.7",
+    "file-loader": "^6.2.0",
+    "ignore-loader": "^0.1.2",
+    "imagemin-optipng": "^8.0.0",
+    "img-loader": "^4.0.0",
+    "next": "12.0.10",
+    "next-compose-plugins": "^2.2.1",
+    "next-optimized-images": "^2.6.2",
+    "react": "17.0.2",
+    "react-bootstrap": "^2.1.2",
+    "react-dom": "17.0.2",
+    "react-infinite-scroller": "^1.2.5",
+    "react-loading-icons": "^1.0.8",
+    "react-markdown": "^8.0.0",
+    "react-query": "^3.34.15",
+    "react-syntax-highlighter": "^15.4.5",
+    "rehype-highlight": "^5.0.2",
+    "remark-gfm": "^3.0.1",
+    "url-loader": "^4.1.1"
+  },
+  "devDependencies": {
+    "eslint": "8.9.0",
+    "eslint-config-next": "12.0.10"
+  }
+}
