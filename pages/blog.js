@@ -10,7 +10,9 @@ import InfiniteScroll from "react-infinite-scroller";
 import BlogPostLink from "../components/BlogPostLink";
 
 export default function Blog() {
-  const defaultPage = "http://localhost:8000/api/v1/posts/";
+  // const defaultPage = "http://localhost:8000/api/v1/posts/";
+  const defaultPage =
+    "https://jvspad-api-ch8ep.ondigitalocean.app/api/v1/posts/";
   const fetchPosts = (args) => {
     if (!args.pageParam) return axios.get(defaultPage);
     return axios.get(args.pageParam);
@@ -34,7 +36,9 @@ export default function Blog() {
   // Render the posts returned from data
   const RenderPosts = (pages) =>
     pages.data.map(({ data }) =>
-      data.results.map((postInfo) => <BlogPostLink {...postInfo} />)
+      data.results.map((postInfo) => (
+        <BlogPostLink key={postInfo.id} {...postInfo} />
+      ))
     );
 
   const Loader = () => (
