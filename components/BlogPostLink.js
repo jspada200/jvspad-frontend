@@ -14,6 +14,7 @@ export default function BlogPostLink({
   body,
   title,
 }) {
+  const bodyString = String(body);
   return (
     <Card className="bg-dark text-white">
       <div className={styles.card}>
@@ -58,7 +59,7 @@ export default function BlogPostLink({
                   },
                 }}
               >
-                <>{body}</>
+                <>{bodyString}</>
               </ReactMarkdown>
             </Card.Text>
           </>
@@ -70,7 +71,7 @@ export default function BlogPostLink({
                   <Row>
                     <Col>{title}</Col>
                     <Col>
-                      {author} - {created_at}
+                      {author} - {created_at.split("T")[0]}
                     </Col>
                   </Row>
                 </Container>
@@ -79,9 +80,11 @@ export default function BlogPostLink({
             <Card.Text>
               <ReactMarkdown
                 remarkPlugins={[remarkGfm, a11yEmoji]}
+                children={bodyString}
                 components={{
                   code({ node, inline, className, children, ...props }) {
                     const match = /language-(\w+)/.exec(className || "");
+                    console.log("Match?", match);
                     return !inline && match ? (
                       <SyntaxHighlighter
                         style={dark}
@@ -89,7 +92,7 @@ export default function BlogPostLink({
                         PreTag="div"
                         {...props}
                       >
-                        <span>{String(children).replace(/\n$/, "")}</span>
+                        {children}
                       </SyntaxHighlighter>
                     ) : (
                       <code className={className} {...props}>
@@ -98,9 +101,7 @@ export default function BlogPostLink({
                     );
                   },
                 }}
-              >
-                <>{body}</>
-              </ReactMarkdown>
+              />
             </Card.Text>
           </>
         )}

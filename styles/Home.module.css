@@ -101,6 +101,16 @@
   padding: 1rem;
 }
 
+.navlink {
+  text-decoration: none;
+  color: fbfbfb;
+}
+
+.navlink:hover {
+  text-decoration: none;
+  color: aliceblue;
+}
+
 /* 
 .card {
   margin: 1rem;
