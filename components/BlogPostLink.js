@@ -80,7 +80,6 @@ export default function BlogPostLink({
             <Card.Text>
               <ReactMarkdown
                 remarkPlugins={[remarkGfm, a11yEmoji]}
-                children={bodyString}
                 components={{
                   code({ node, inline, className, children, ...props }) {
                     const match = /language-(\w+)/.exec(className || "");
@@ -101,7 +100,9 @@ export default function BlogPostLink({
                     );
                   },
                 }}
-              />
+              >
+                {bodyString}
+              </ReactMarkdown>
             </Card.Text>
           </>
         )}
