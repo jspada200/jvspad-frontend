@@ -10,7 +10,7 @@ export default function Page({ children }) {
     <div className={styles.container}>
       <main className={styles.main}>
         <h2 className={styles.code}>
-          Thanks for Visiting but I am still building this site as of March 20th
+          Thanks for Visiting but I am still building this site as of May 4th
           2022 👷
           <br /> Check back again soon!
         </h2>

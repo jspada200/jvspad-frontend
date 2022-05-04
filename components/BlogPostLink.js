@@ -16,8 +16,8 @@ export default function BlogPostLink({
 }) {
   const bodyString = String(body);
   return (
-    <Card className="bg-dark text-white">
-      <div className={styles.card}>
+    <Card className={`bg-dark text-white ${styles.card}`}>
+      <div>
         {image ? (
           <>
             <Card.Img src={image} alt={title} />
